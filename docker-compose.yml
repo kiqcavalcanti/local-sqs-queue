@@ -1,0 +1,25 @@
+services:
+  sns:
+    image: s12v/sns
+    ports:
+      - "9911:9911"
+    volumes:
+      - ./config/db.json:/etc/sns/db.json
+    depends_on:
+      - sqs
+  sqs:
+    image: softwaremill/elasticmq-native
+    ports:
+      - "9324:9324"
+      - "9325:9325"
+    volumes:
+      - ./config/elasticmq.conf:/opt/elasticmq.conf
+  node:
+    image: node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${PWD}:/app
+    working_dir: /app
+    command: |
+      /bin/bash -c "npm start"

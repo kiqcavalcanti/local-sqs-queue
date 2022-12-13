@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "timestamp": 1670900503248,
+  "subscriptions": [{
+    "arn": "arn:aws:sns:us-east-1:123456789012:Topic1:aa475b84-1b29-4b40-b368-e8ba0cec495c",
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:Topic1",
+    "endpoint": "aws-sqs://first-queue?amazonSQSEndpoint=http://sqs:9324&accessKey=a&secretKey=b",
+    "owner": "",
+    "protocol": "sqs"
+  }],
+  "topics": [{
+    "arn": "arn:aws:sns:us-east-1:123456789012:Topic1",
+    "name": "Topic1"
+  }]
+}
